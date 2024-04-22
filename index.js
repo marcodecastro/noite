@@ -1,7 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { body, validationResult } from 'express-validator';
-
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 dotenv.config();
 
