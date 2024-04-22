@@ -1,8 +1,6 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
 import pg from 'pg';
 import { body, validationResult } from 'express-validator';
 import bcrypt from 'bcrypt';
@@ -15,15 +13,9 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
-app.use(bodyParser.json())
 
-const corsOptions = { 
-    origin: process.env.CORS_ORIGIN,  
-    optionsSuccessStatus: 200,
-  };
 
-  const PORT = process.env.PORT   
+const PORT = process.env.PORT   
 
 
 // Cria uma rota para teste
