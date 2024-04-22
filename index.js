@@ -1,10 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import pg from 'pg';
-import { body, validationResult } from 'express-validator';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 import User from './models/user.js';
 
 
@@ -12,7 +8,6 @@ dotenv.config();
 
 
 const app = express();
-
 
 
 const PORT = process.env.PORT   
