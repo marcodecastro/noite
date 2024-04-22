@@ -26,31 +26,10 @@ const corsOptions = {
   const PORT = process.env.PORT   
 
 
-// Connect to MongoDB por string
-const mongoDBUrl = process.env.MONGODB_URI 
-
-if (!mongoDBUrl) {
-  throw new Error('MONGODB_URI environment variable is not defined');
-}
-
-mongoose.connect(mongoDBUrl, {
-});
-
-const db = mongoose.connection;
-db.on('error', (error) => {
-  console.error('Erro ao conectar ao MongoDB:', error.message);
-  process.exit(1);
-});
-db.once('open', () => {
-  console.log('Conexão com o MongoDB estabelecida com sucesso');
-});
-
-
 // Cria uma rota para teste
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
-
 
 
 // Rota de cadastro
