@@ -1,7 +1,6 @@
 import express from 'express';
-import cors from 'cors';
 import dotenv from 'dotenv';
-import User from './models/user.js';
+import { body, validationResult } from 'express-validator';
 
 
 dotenv.config();
