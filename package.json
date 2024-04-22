@@ -2,12 +2,12 @@
   "name": "noite",
   "version": "1.0.0",
   "description": "",
-  "type":"module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "webpack --mode production"
+    "build": "babel index.js -d dist",
+    "start": "npm run build && nodemon dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,10 @@
   "dependencies": {
     "express": "^4.19.2",
     "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4"
   }
 }
