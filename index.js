@@ -22,10 +22,6 @@ const corsOptions = {
 const PORT = process.env.PORT   
 
 
-// Cria uma rota para teste
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
 
 
 // Rota de cadastro
