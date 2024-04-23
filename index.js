@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 import { body, validationResult } from 'express-validator';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -20,7 +21,7 @@ const corsOptions = {
 
 
 const PORT = process.env.PORT 
- 
+
 
 // Connect to MongoDB por string
 const mongoDBUrl = process.env.MONGODB_URI 
