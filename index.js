@@ -3,23 +3,23 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { body, validationResult } from 'express-validator';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import User from './models/User.js';
 
 dotenv.config();
 
-
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const corsOptions = { 
   origin: process.env.CORS_ORIGIN,  
   optionsSuccessStatus: 200,
 };
-
 
 const PORT = process.env.PORT 
 
@@ -44,6 +44,11 @@ db.once('open', () => {
 });
 
 
+
+//Rota para teste
+app.get('/', (req, res) => {
+  res.json({ message: 'API de autenticação de usuários' });
+});
 
 
 
